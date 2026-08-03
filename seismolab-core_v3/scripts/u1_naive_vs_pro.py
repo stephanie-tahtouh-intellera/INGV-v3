@@ -114,16 +114,18 @@ def pro_patch(raw_data):
         key = f"{entry['station']}.{entry['channel']}"
 
         from seismolab.parsers.mseed import SeismicRecord, SeismicTrace
+        location = entry.get("location", "")
         record = SeismicRecord(
             station=entry["station"],
             channel=entry["channel"],
+            location=location,
             start_time=entry["start_time"],
             sample_rate=entry["sample_rate"],
             samples=entry["samples"],
         )
 
         if key not in traces:
-            traces[key] = SeismicTrace(station=entry["station"], channel=entry["channel"])
+            traces[key] = SeismicTrace(station=entry["station"], channel=entry["channel"], location=location)
             traces[key].add_record(record)
         else:
             last = traces[key].records[-1]
