@@ -23,10 +23,10 @@ il processamento e monitoraggio di dati geofisici (sismica, vulcanologia, GPS).
 ## Struttura del repository
 
 ```
-seismolab/parsers/mseed.py       # Issue #12 — parser MiniSEED
+seismolab/parsers/mseed.py       # Issue #12 — parser MiniSEED (demo docente)
 seismolab/alerts/volcanic.py     # Issue #17 — alerting vulcanologico
 seismolab/data/gps_query.py      # Issue #23 — query GPS PostGIS
-seismolab/processing/event_detector.py  # Issue #0 — STA/LTA (demo docente)
+seismolab/processing/event_detector.py  # Issue #0 — STA/LTA
 tests/conftest.py                # fixture condivise
 ```
 

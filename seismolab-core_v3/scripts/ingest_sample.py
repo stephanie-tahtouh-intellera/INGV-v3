@@ -5,10 +5,10 @@ Esegue la pipeline di ingestione su dati sintetici e mostra
 l'output di ogni modulo. Usato durante U1 per la demo live.
 
 Ogni sezione dell'output corrisponde a una delle quattro issue del modulo:
-- Issue #12: MiniSEED parser con gap temporali
+- Issue #12: MiniSEED parser con gap temporali (demo docente)
 - Issue #17: alerting vulcanologico con soglie
 - Issue #23: GPS queries (stub — NotImplementedError atteso)
-- Issue #0:  rilevazione eventi con STA/LTA (demo docente)
+- Issue #0:  rilevazione eventi con STA/LTA
 """
 
 import math
@@ -164,11 +164,11 @@ print("  Da implementare: get_connection, fetch_recent_measurements,")
 print("                   fetch_displacement_summary, watch_anomalies")
 
 # ════════════════════════════════════════════════════════════════
-# SEZIONE 4 — Issue #0: event detector (demo docente)
+# SEZIONE 4 — Issue #0: event detector
 # ════════════════════════════════════════════════════════════════
 print()
 print("=" * 60)
-print("SEZIONE 4 — Event detector STA/LTA (Issue #0 — demo docente)")
+print("SEZIONE 4 — Event detector STA/LTA (Issue #0)")
 print("=" * 60)
 
 from seismolab.processing.event_detector import detect_events, batch_detect

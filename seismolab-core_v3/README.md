@@ -13,8 +13,8 @@ Gestisce dati provenienti da tre tipologie di sensori:
 - Dipendenze: vedi `requirements.txt`
 
 ```bash
-git clone https://github.com/ingv-internal/seismolab-core.git
-cd seismolab-core
+git clone https://github.com/stephanie-tahtouh-intellera/INGV-v3.git
+cd INGV-v3/seismolab-core_v3
 pip install -r requirements.txt
 ```
 

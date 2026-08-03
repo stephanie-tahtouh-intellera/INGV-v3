@@ -10,7 +10,7 @@ Questo modulo è usato per il monitoraggio in tempo reale:
 detect_events viene chiamata su ogni nuova finestra di dati,
 e gli eventi rilevati vengono accumulati per il report giornaliero.
 
-Issue #0 (demo docente) — BUG SOTTILE:
+Issue #0 — BUG SOTTILE:
 La funzione detect_events ha un parametro con valore di default mutabile
 (events: list = []). In Python, i valori di default dei parametri sono
 valutati UNA SOLA VOLTA alla definizione della funzione — non ad ogni
