@@ -1,3 +1,43 @@
+
+# SeismoLab Core
+
+
+# Coach — Piano tecnico & Prompt (`coach_piano_prompt.jsx`)
+
+Strumento interattivo per i partecipanti: incolla il tuo piano tecnico o il tuo prompt per una delle issue sotto e ricevi feedback mirato (cosa funziona, cosa è ancora generico, una domanda guida) senza che ti venga data la soluzione.
+
+### Installazione e uso
+
+**Come aprire `coach_piano_prompt.jsx`**
+
+Il file è un componente React con export default, pensato per girare come artifact Claude. Hai due modi per usarlo:
+
+1. **Come artifact Claude (consigliato, nessuna installazione)**
+   - Apri una conversazione su claude.ai (o nell'app desktop/mobile).
+   - Carica il file `coach_piano_prompt.jsx` nella chat, oppure incolla il suo contenuto e chiedi a Claude di "renderizzarlo come artifact".
+   - L'artifact si apre automaticamente in un pannello a lato; usa il pulsante di fullscreen in alto a destra del pannello per espanderlo a tutto schermo.
+   - Non serve installare nulla: l'ambiente artifact fornisce già React e la storage API (`window.storage`) usata per salvare la cronologia dei tentativi.
+   - Perché la valutazione funzioni devi essere autenticato con un account Claude attivo, dato che il componente chiama l'API di Claude (`api.anthropic.com`) al click su **Valuta**.
+
+2. **Come progetto React standalone (per uso locale/offline dell'interfaccia, senza il pulsante "Valuta" funzionante)**
+   - Crea un progetto React (es. con Vite): `npm create vite@latest seismolab-coach -- --template react`
+   - Copia `coach_piano_prompt.jsx` dentro `src/`, rinominandolo ad es. `Coach.jsx`.
+   - Importalo in `src/App.jsx`: `import Coach from './Coach'; export default function App() { return <Coach />; }`
+   - Installa le dipendenze e avvia: `npm install && npm run dev`
+   - Nota: fuori dall'ambiente artifact, `window.storage` non esiste e la chiamata a `api.anthropic.com` dal browser fallirà per CORS/assenza di chiave — questa modalità serve solo a vedere e testare l'interfaccia, non a ottenere feedback reali. Per la valutazione funzionante, usa l'opzione 1.
+
+**Uso una volta aperto**
+
+1. Seleziona l'issue su cui stai lavorando (`#17`, `#23` o `#0`).
+2. Scegli la fase: **Piano tecnico** o **Prompt**.
+3. Scrivi il testo nell'area dedicata e premi **Valuta**.
+4. Il componente chiama l'API di Claude internamente per generare il feedback.
+5. I tentativi precedenti restano visibili in fondo alla pagina per tracciare i progressi durante la sessione.
+
+> Lo strumento non scrive mai la soluzione al posto tuo: il suo scopo è aiutarti a capire cosa manca nel tuo ragionamento.
+
+---
+
 # SeismoLab Core
 
 Libreria Python interna per l'acquisizione, validazione e analisi di dati geofisici multi-sorgente.
